@@ -1,0 +1,103 @@
+extends base
+
+block content
+
+  //- main.lang 
+  //-   button.btn_lang Tamil
+  //-   button.btn_lang.ma-left Hindi
+  //-   button.btn_lang.ma-left English
+  
+  main.carousel_container  
+    .carousel
+      .slides
+
+        .container_topics.slide
+          .carousel__picture-overlay &nbsp;
+          img(src='https://i.pinimg.com/originals/9e/b9/0e/9eb90ed25f38008dfda7693c00a2facd.jpg')
+          .centered
+            h1 WHAT IS BITCOIN AND WHY DOES IT MATTER?
+            .carousel-box__group
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-clock')
+                span.carousel-box__text= `28 Hours`
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-trending-up')
+                span.carousel-box__text= `Beginner`
+            .carousel-box__group
+              .carousel-box__detail
+                a.view_course(href='/course/what-is-bitcoin-and-why-does-it-matter') View Course
+
+
+
+        .container_topics.slide
+          .carousel__picture-overlay &nbsp;
+          img(src='https://i.pinimg.com/originals/61/67/68/6167682ff0710bfad2a2c5a02718a0b4.jpg')
+          .centered
+            h1 பிட்காயின் நெறிமுறை மற்றும் வடிவமைப்பு
+            .carousel-box__group
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-clock')
+                span.carousel-box__text= `3 Hours`
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-trending-up')
+                span.carousel-box__text= `Beginner`
+            .carousel-box__group
+              .carousel-box__detail
+                a.view_course(href='/course/பிட்காயின்-அடிப்படைகள்') View Course
+
+        .container_topics.slide
+          .carousel__picture-overlay &nbsp;
+          img(src='https://i.pinimg.com/originals/ee/67/14/ee67140fff32088c77fb0af9ae37163d.jpg')
+          .centered
+            h1 BITCOIN THEORY
+            .carousel-box__group
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-clock')
+                span.carousel-box__text= `10 Hours`
+              .carousel-box__detail
+                svg.carousel-box__icon
+                  use(xlink:href='/img/icons.svg#icon-trending-up')
+                span.carousel-box__text= `Intermediate`
+            .carousel-box__group
+              .carousel-box__detail
+                a.view_course(href='#') View Course
+
+      .controls
+        .control.prev-slide &#x25C4;
+        .control.next-slide &#x25BA;
+
+
+
+
+  main.main
+    .card-container
+
+      each course in courses
+        .card
+          .card__header
+            .card__picture
+              .card__picture-overlay &nbsp;
+              img.card__picture-img(src=`${course.imageCover}`, alt=`${course.courseName}`)
+            h3.heading-tertirary
+              span= course.courseName
+
+          .card__details
+            h4.card__sub-heading= `${course.difficulty} ${course.duration}-hour course`
+            p.card__text= course.summary
+
+
+          .card__footer
+            p
+              span.card__footer-value= `₹${course.price}`
+              | 
+              span.card__footer-text 
+            p.card__ratings
+              span.card__footer-value Language
+              | 
+              span.card__footer-text= course.language
+            a.btn.btn--green.btn--small(href=`/course/${course.slug}`) Details

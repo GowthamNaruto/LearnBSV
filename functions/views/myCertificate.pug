@@ -1,0 +1,58 @@
+extends base
+
+mixin navItems(link, text, icon, active)
+  li(class=`${active ? 'side-nav--active' : ''}`)
+    a(href=`${link}`)
+      //- svg
+      //-   use(xlink:href=`img/icons.svg#icon-${icon}`)
+      | #{text}
+
+block content
+  main.main
+    .user-view
+      nav.user-view__menu
+        ul.side-nav
+          +navItems('/me', 'Settings', 'settings')
+          +navItems('My-Courses', 'My Courses', 'briefcase')
+          +navItems('/my-certificates', 'My Certificates', 'star', true)
+          +navItems('#', 'Billing', 'credit-card')
+
+        - if (user.role === 'admin')
+          .admin-nav
+            h5.admin-nav__heading Admin
+            ul.side-nav
+              +navItems('#', 'Manage tours', 'map')
+              +navItems('#', 'Manage users', 'users')
+              +navItems('#', 'Manage eviews', 'star')
+              +navItems('#', 'Manage bookings', 'briefcase')
+
+      .user-view__content
+        h2.heading-secondary.ma-bt-md.ma-left-2 My Certificate
+        each certificate in certificates
+          .certificate_card_containers
+            .certificate_card
+              .certificate_card__header
+                .certificate_card__picture
+                  .certificate_card__picture-overlay &nbsp;
+                  img.certificate_card__picture-img(src=`https://i.pinimg.com/originals/9e/b9/0e/9eb90ed25f38008dfda7693c00a2facd.jpg`)
+
+              .certificate_card__details
+                h4.certificate_card__sub-heading= certificate.courseName
+
+
+              .certificate_card__footer
+                a.btn_certificate.btn--green.cert_btn(href='/my-certificate') View Certificate
+            
+          
+            //- .certificate_card
+            //-   .certificate_card__header
+            //-     .certificate_card__picture
+            //-       .certificate_card__picture-overlay &nbsp;
+            //-       img.certificate_card__picture-img(src=`https://i.pinimg.com/originals/9e/b9/0e/9eb90ed25f38008dfda7693c00a2facd.jpg`)
+
+            //-   .certificate_card__details
+            //-     h4.certificate_card__sub-heading Hour course
+
+            //-   .certificate_card__footer
+            //-     a.btn_certificate.btn--green.cert_btn(href=`https://i.pinimg.com/originals/9e/b9/0e/9eb90ed25f38008dfda7693c00a2facd.jpg`) View Certificate
+            

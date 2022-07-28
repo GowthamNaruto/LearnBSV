@@ -1,0 +1,996 @@
+mixin indexCard()
+  main.sub
+    .wrapper.px-20
+      h2.heading-secondary.ma-bt-lg Table of contents
+      
+
+      if (lesson.courseContent[0])
+        .faq-container
+          button.question
+            if user.progress1 >=3
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[0].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[0].chapterName.name  
+          .answercont
+            if (lesson.courseContent[0].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=0
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[0].lessonName    
+
+            if (lesson.courseContent[0].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=1
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+                  button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[0].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=2
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+                  button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[2].lessonName
+
+            //- if (lesson.courseContent[0].chapterName.lesson[3])         
+            //-   .answer
+            //-     if user.progress1 >=4
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[3].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+            //-       button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[3].lessonName
+
+            //- if (lesson.courseContent[0].chapterName.lesson[4])          
+            //-   .answer
+            //-     if user.progress1 >=5
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[4].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+            //-       button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[4].lessonName
+
+            //- if (lesson.courseContent[0].chapterName.lesson[5])         
+            //-   .answer
+            //-     if user.progress1 >=6
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[5].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+            //-       button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[5].lessonName
+
+            //- if (lesson.courseContent[0].chapterName.lesson[6])         
+            //-   .answer
+            //-     if user.progress1 >=7
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[0].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[0].chapterName.lesson[6].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')              
+            //-       button.answer_btn.ma-left= lesson.courseContent[0].chapterName.lesson[6].lessonName
+
+
+      if (lesson.courseContent[1])
+        .faq-container
+          button.question
+            if user.progress1 >=9
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[1].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[1].chapterName.name            
+
+          .answercont
+            if (lesson.courseContent[1].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=3
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=4
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=5
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=6
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[3].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[4])          
+              .answer
+                if user.progress1 >=7
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[4].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[4].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[5])         
+              .answer
+                if user.progress1 >=8
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[5].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[5].lessonName
+
+            if (lesson.courseContent[1].chapterName.lesson[6])         
+              .answer
+                if user.progress1 >=9
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[1].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[1].chapterName.lesson[6].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[1].chapterName.lesson[6].lessonName
+
+
+      if (lesson.courseContent[2])
+        .faq-container
+          button.question
+            if user.progress1 >15
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[2].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[2].chapterName.name            
+          .answercont
+            if (lesson.courseContent[2].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=10
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[2].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=11
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[2].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=12
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[2].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=13
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[3].lessonName
+
+            if (lesson.courseContent[2].chapterName.lesson[4])         
+              .answer
+                if user.progress1 >=14
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[4].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[4].lessonName
+
+            if (lesson.courseContent[2].chapterName.lesson[5])         
+              .answer
+                if user.progress1 >=15
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[2].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[2].chapterName.lesson[5].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[2].chapterName.lesson[5].lessonName
+
+  
+
+      if (lesson.courseContent[3])
+        .faq-container
+          button.question
+            if user.progress1 >19
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[3].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[3].chapterName.name            
+          .answercont
+            if (lesson.courseContent[3].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=16
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[3].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=17
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[3].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=18
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[3].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=19
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[3].lessonName
+
+            //- if (lesson.courseContent[3].chapterName.lesson[4])          
+            //-   .answer
+            //-     if user.progress1 >=22
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[4].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+            //-       button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[4].lessonName
+
+            //- if (lesson.courseContent[3].chapterName.lesson[5])         
+            //-   .answer
+            //-     if user.progress1 >=23
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[3].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[3].chapterName.lesson[5].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+            //-       button.answer_btn.ma-left= lesson.courseContent[3].chapterName.lesson[5].lessonName
+ 
+
+
+      if (lesson.courseContent[4])
+        .faq-container
+          button.question
+            if user.progress1 >25
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[4].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[4].chapterName.name          
+
+          .answercont
+            if (lesson.courseContent[4].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=20
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[4].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=21
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[4].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=22
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[4].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=23
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[3].lessonName
+
+            if (lesson.courseContent[4].chapterName.lesson[4])          
+              .answer
+                if user.progress1 >=24
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[4].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[4].lessonName
+
+            if (lesson.courseContent[4].chapterName.lesson[5])         
+              .answer
+                if user.progress1 >=25
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[5].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[5].lessonName
+
+            //- if (lesson.courseContent[4].chapterName.lesson[6])         
+            //-   .answer
+            //-     if user.progress1 >=30
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+            //-       a.ma-left(href=`/lesson/${lesson.courseContent[4].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[4].chapterName.lesson[6].lessonName
+            //-     else                
+            //-       svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+            //-         path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+            //-       button.answer_btn.ma-left= lesson.courseContent[4].chapterName.lesson[6].lessonName
+
+
+
+      if (lesson.courseContent[5])
+        .faq-container
+          button.question
+            if user.progress1 >32
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[5].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[5].chapterName.name            
+          .answercont
+            if (lesson.courseContent[5].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=26
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=27
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=28
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=29
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[3].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[4])         
+              .answer
+                if user.progress1 >=30
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[4].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[4].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[5])         
+              .answer
+                if user.progress1 >=31
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[5].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[5].lessonName
+
+            if (lesson.courseContent[5].chapterName.lesson[6])         
+              .answer
+                if user.progress1 >=32
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[5].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[5].chapterName.lesson[6].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[5].chapterName.lesson[6].lessonName
+
+
+
+      if (lesson.courseContent[6])
+        .faq-container
+          button.question
+            if user.progress1 >36
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[6].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[6].chapterName.name            
+          .answercont
+            if (lesson.courseContent[6].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=33
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[6].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[6].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[6].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[6].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=34
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[6].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[6].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[6].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[6].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=35
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[6].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[6].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[6].chapterName.lesson[2].lessonName
+
+            if (lesson.courseContent[6].chapterName.lesson[3])         
+              .answer
+                if user.progress1 >=36
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[6].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[6].chapterName.lesson[3].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[6].chapterName.lesson[3].lessonName
+
+            
+
+      if (lesson.courseContent[7])
+        .faq-container
+          button.question
+            if user.progress1 >39
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[7].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[7].chapterName.name            
+          .answercont
+            if (lesson.courseContent[7].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=37
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[7].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[7].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[7].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[7].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=38
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[7].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[7].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[7].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[7].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=39
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[7].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[7].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[7].chapterName.lesson[2].lessonName
+
+          
+
+
+
+      if (lesson.courseContent[8])
+        .faq-container
+          button.question
+            if user.progress1 >42
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[8].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[8].chapterName.name            
+          .answercont
+            if (lesson.courseContent[8].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=40
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[8].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[8].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[8].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[8].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=41
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[8].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[8].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[8].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[8].chapterName.lesson[2])         
+              .answer
+                if user.progress1 >=42
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[8].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[8].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[8].chapterName.lesson[2].lessonName
+
+
+
+      if (lesson.courseContent[9])
+        .faq-container
+          button.question
+            if user.progress1 >=45
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[9].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[9].chapterName.name   
+
+          .answercont
+            if (lesson.courseContent[9].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=43
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[0].lessonName
+
+            if (lesson.courseContent[9].chapterName.lesson[1])
+              .answer
+                if user.progress1 >=44
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[1].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[1].lessonName
+
+            if (lesson.courseContent[9].chapterName.lesson[2])
+              .answer
+                if user.progress1 >=45
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[2].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[2].lessonName
+
+      if (lesson.courseContent[10])
+        .faq-container
+          button.question
+            if user.progress1 >=46
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[10].chapterName.name
+            else                
+              svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+              span.ma-left= lesson.courseContent[10].chapterName.name   
+
+          .answercont
+            if (lesson.courseContent[10].chapterName.lesson[0])
+              .answer
+                if user.progress1 >=46
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+                  a.ma-left= lesson.courseContent[10].chapterName.lesson[0].lessonName
+                else                
+                  svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+                    path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+                  button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[0].lessonName
+
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[1])
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[1].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[1].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[2])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[2].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[2].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[3])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[3].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[3].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[4])          
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[4].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[4].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[5])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[5].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[5].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[6])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[6].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[6].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[7])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[7].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[7].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[7].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[8])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[8].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[8].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[8].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[9])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[9].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[9].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[9].lessonName
+
+      //-       if (lesson.courseContent[9].chapterName.lesson[10])     
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[9].chapterName.lesson[10].lessonSlug}`)= lesson.courseContent[9].chapterName.lesson[10].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[9].chapterName.lesson[10].lessonName
+
+
+
+
+
+      //- if (lesson.courseContent[10])
+      //-   .faq-container
+      //-     button.question= lesson.courseContent[10].chapterName.name
+      //-     .answercont
+      //-       if (lesson.courseContent[10].chapterName.lesson[0])
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[0].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[0].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[0].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[1])
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[1].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[1].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[1].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[2])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[2].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[2].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[2].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[3])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[3].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[3].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[3].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[4])          
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[4].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[4].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[4].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[5])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[5].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[5].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[5].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[6])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[6].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[6].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[6].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[7])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[7].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[7].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[7].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[8])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[8].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[8].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[8].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[9])         
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[9].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[9].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[9].lessonName
+
+      //-       if (lesson.courseContent[10].chapterName.lesson[10])     
+      //-         .answer
+      //-           if user.progress1 >=1
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#4834d4'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')
+      //-             a.ma-left(href=`/lesson/${lesson.courseContent[10].chapterName.lesson[10].lessonSlug}`)= lesson.courseContent[10].chapterName.lesson[10].lessonName
+      //-           else                
+      //-             svg(xmlns='http://www.w3.org/2000/svg' class='accordion_svg' stroke='#ccc'  fill='none' viewbox='0 0 24 24' stroke-width='2')
+      //-               path(stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z')                
+      //-             button.answer_btn.ma-left= lesson.courseContent[10].chapterName.lesson[10].lessonName
+
+    //- each progress in lesson.progresses
+    //-   h2.heading-secondary.ma-bt-lg= `${progress.progress.length} completed`

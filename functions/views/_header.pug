@@ -1,0 +1,41 @@
+header.header
+  .header-container
+    a.header__logo(href='/')
+      img(src='/img/logo-green-small.png' alt='Natour logo')
+    nav.h-nav
+      //- h1 The progress element
+      //- label(for='file') Course progress:
+      //- - var j= 60
+      //- progress#file(value=`${j}` max='100')  60% 
+      a(href='/') Home
+      a(href='/') About
+      a(href='/') Contact
+      if user
+        a(href='/logout') Log out
+        a(href='/me')= user.name
+      else
+        a(href='/login') Log in
+        a(href='/signup') Sign up
+  input#openSidebarMenu.openSidebarMenu(type='checkbox')
+  label.sidebarIconToggle(for='openSidebarMenu')
+    .spinner.diagonal.part-1
+    .spinner.horizontal
+    .spinner.diagonal.part-2
+  #sidebarMenu
+    ul.sidebarMenuInner
+      li.color-white
+        a(href='/') Home
+      li.color-white
+        a(href='#') About
+      li.color-white
+        a(href='#') Contact
+      if user
+        li.color-white
+          a(href='/me')= user.name
+        li.color-white
+          a(href='/logout') Log out
+      else
+        li.color-white
+          a(href='/login') Log in
+        li.color-white
+          a(href='/signup') Sign Up

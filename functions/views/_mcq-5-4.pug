@@ -1,0 +1,23 @@
+mixin mcq-5-2()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: When looking at a private and public blockchain, which one requires users to pay a monthly fee?
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span A public blockchain
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span A private blockchain
+
+    
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

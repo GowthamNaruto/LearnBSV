@@ -1,0 +1,77 @@
+mixin mcq-2-4()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: Search for block # 0, the first block of the Bitcoin blockchain which is also referred to as the Genesis Block. What is the date and time that this block was generated?
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span 12-29-2010 12:57:43(UTC + 1)
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span 01-03-2009 19:15:05(UTC + 1)
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span 09-21-2017 13:06:56(UTC + 1)
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span 11-11-2011 11:11:11(UTC + 1)
+
+
+          li.quiz-box
+            h3 Question2: What are the total transaction fees that the miner received from block # 0?
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span 0 BSV
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span 0.123 BSV
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span 22 BSV
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span 733.411 BSV
+
+
+          li.quiz-box
+            h3 Question3: Question: Search for block # 346,457. The block was generated at 03-06-2015 20:00:17 (UTC + 1).
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span False
+
+
+          li.quiz-box
+            h3 Question4: Block # 346,457 was mined by 17EgF2GEk9L53dHsGRnKhugRp7Cf5SHeko (Antpool).
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span False
+
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

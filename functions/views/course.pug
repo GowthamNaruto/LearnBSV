@@ -1,0 +1,77 @@
+extends base
+include _reviewCard
+
+mixin overviewBox(label, text, icon)
+  .overview-box__detail
+    svg.overview-box__icon
+      use(xlink:href=`/img/icons.svg#icon-${icon}`)
+    span.overview-box__label= label
+    span.overview-box__text= text
+
+block content
+  section.section-header
+    .header__hero
+      .header__hero-overlay &nbsp;
+      img.header__hero-img(src=`${course.imageCover}`)
+
+    .heading-box
+      h1.heading-primary
+        span= `${course.courseName}`
+      .heading-box__group
+        .heading-box__detail
+          svg.heading-box__icon
+            use(xlink:href='/img/icons.svg#icon-clock')
+          span.heading-box__text= `${course.duration} Hours`
+
+  section.section-description
+    .description-box
+      h2.heading-secondary.ma-bt-lg= `${course.courseName}`
+      if (course.url)
+        iframe(src=`${course.url}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+      - const parapraphs = course.description.split('\n');
+      each p in parapraphs
+        p.description__text= p
+
+    .overview-boxs
+      div
+        .overview-box__group
+          h2.heading-secondary.ma-bt-lg Table of Contents
+          each lessons in course.lessons
+            .overview-box__detail
+              //- - if (course.chapter === true)
+              span.overview-box__text= `${lessons.chapter}`
+
+  section.section-cta
+    .cta
+
+      .cta__content
+        h2.heading-secondary What are you waiting for?
+        //- h2.heading-secondary= userId
+        //- h2.heading-secondary= progress
+        p.cta__text= `${course.duration} hours. ${course.lessons.length} chapters. Start your course!`
+
+        //- if (user.name === 'jiraya')
+        //-   button#progress.btn.btn--green.span-all-rows(data-lesson-id=`${course.lessonId, course.slug}`) Enroll Jiraya
+        //- if (user)
+        //-   button#progress.btn.btn--green.span-all-rows(data-user-id=`${user.id}, ${progress}`) Enroll Jiraya
+          //- a.progress.btn.btn--green.span-all-rows(href=`/course1/${userId}` ) Enroll
+        //- if (user.progress2 >= 2)
+        //-   a.button.btn.btn--green.span-all-rows(href=`/lesson/${course.slug}`) Enroll
+        if user
+          -let userId= user.id
+          -let courseName= course.slug
+          -let courseId= course.id
+          -let coursePrice= course.price
+            if course.courseNumber === 1
+              if (user.progress1 >= 1)
+                a.button.btn.btn--green.span-all-rows(href=`/lesson/${course.slug}`) Resume
+              else
+                button#progressEnroll.btn.btn--green.span-all-rows(data-user-id=`${user.id},${courseName},${courseId},${coursePrice}`) Enroll
+            if course.courseNumber >= 2
+              if (user.progress2 >= 2)
+                a.button.btn.btn--green.span-all-rows(href=`/lesson/${course.slug}`) Resume
+              else
+                a.button.btn.btn--green.span-all-rows(href=`#`) Coming soon
+          
+        else
+          a.button.btn.btn--green.span-all-rows(href=`/login`) Log in to Enroll

@@ -1,0 +1,82 @@
+mixin mcq-6-3()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: Which bad actor pays the biggest penalty for his behavior? For example: a bad actor deliberately does a double spending.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span The miner, POW
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span The forger, POS
+
+          li.quiz-box
+            h3 Question2: From an exit prospective; to stop mining (POW) or to stop forging (POS), who can exit most easily?
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span Miner (POW)
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span Forger (POS)
+
+    
+          li.quiz-box
+            h3 
+                | Question3: What is, from a financial perspective, the difference between POW and POS if you want to initiate a 51% attack? 
+                | Proposition 1. For the miner (POW): if the 51% attack is unsuccessful, the money spent on the resources of the attack are mostly wasted costs. 
+                | Proposition 2. For the forger (POS): if the 51% attack is unsuccessful, the money spent on the resources of the attack still have value.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span Proposition 1 is False; Proposition 2 is True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span Proposition 1 is True; Proposition 2 is True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span Proposition 1 is False; Proposition 2 is False
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span Proposition 1 is True; Proposition 2 is False
+
+
+          li.quiz-box
+            h3 
+                | Question4: What is, from a commitment perspective, the main difference between a miner (POW) and a forger (POS)? 
+                | Proposition 1. In case of a fork, the miner (POW) must choose for one of the chains; it is all or nothing.
+                | Proposition 2. In case of a fork, the forger (POS) is also incentivized to forge on the competing chain; he does not necessarily make a choice between one of the two chains.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span Proposition 1 is False; Proposition 2 is True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span Proposition 1 is False; Proposition 2 is False
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span Proposition 1 is True; Proposition 2 is True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span Proposition 1 is True; Proposition 2 is False
+
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

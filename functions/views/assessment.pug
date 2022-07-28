@@ -1,0 +1,39 @@
+extends base
+
+block content
+  main.main
+    .containers
+        each question in assessment.questions
+          ul.quiz
+            li.quiz-box
+              h3= question.question                     
+              ul.choices
+                li.answer-box
+                  label
+                    input(type='radio' name=`question${question.serial}` value='buffer')
+                    span= question.answer1
+                li.answer-box
+                  label
+                    input(type='radio' name=`question${question.serial}` value='function')
+                    span= question.answer2
+                li.answer-box
+                  label
+                    input(type='radio' name=`question${question.serial}` value='global')
+                    span= question.answer3
+                li.answer-box
+                  label
+                    input(type='radio' name=`question${question.serial}` value='number')
+                    span= question.answer4
+    - let courseName = assessment.courseName
+    - let name = user.name
+    - let Id = user.id
+    //- h2= courseName        
+    //- h2= name        
+    //- h2= Id        
+
+    .button-box
+      button.view-results#viewResults View Results
+      span#myresults.my-results My results will appear here
+      a.view-certificate#viewCertificate(data-user-id=`${name},${courseName},${Id}`) View Certificate
+      a.view-certificate#Certificate(href ='/') View Certificate
+      //- button#certificate.view-certificate#viewCertificateBtn.btn.btn--green.span-all-rows(data-user-id=`${name},${courseName},${Id} `) NEXT LESSSON 

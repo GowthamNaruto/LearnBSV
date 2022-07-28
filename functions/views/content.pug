@@ -1,0 +1,91 @@
+
+extends base
+
+block append head
+
+mixin accordion(id)
+  .accordion
+    input.toggle(id=id, type='checkbox')
+    label.accordion-header.accordion-toggle(for=id)
+      span= content.courseContent[0].chapterName.name
+    .accordion-content
+      .accordion-content-inner
+        each lessonName in content.courseContent 
+          p= content.courseContent[0].chapterName.lesson[0].lessonName
+      
+      .accordion-content-inner
+        each lessonName in content.courseContent 
+          a.span(href=`/lesson/${content.slug}`)= content.courseContent[0].chapterName.lesson[1].lessonName
+
+block content
+
+  section.section-description
+    - let i =0, j =0
+    script.
+      let button = document.getElementById("clickme"),
+      a = 0;
+      const add=  function() {
+        a++
+        alert(a)
+      }
+    .description-box
+      - const primaryHeading = content.courseContent[i].chapterName.lesson[j].primaryHeading;
+      - const primaryDescription = content.courseContent[i].chapterName.lesson[j].primaryDescription.split('\n');
+      h2.heading-secondary.ma-bt-lg
+        span= primaryHeading
+      each p in primaryDescription
+        p.description__text= p
+      if content.courseContent[i].chapterName.lesson[j].primaryImage
+        img(src=`${content.courseContent[i].chapterName.lesson[j].primaryImage}`)
+      if (content.courseContent[i].chapterName.lesson[j].primaryVideo)
+        iframe(src=`${ontent.courseContent[i].chapterName.lesson[j].primaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+      if content.courseContent[i].chapterName.lesson[j].secondaryHeading
+        - const secondaryHeading = content.courseContent[i].chapterName.lesson[j].secondaryHeading;
+        - const secondaryDescription = content.courseContent[i].chapterName.lesson[j].secondaryDescription.split('\n');
+        h2.heading-secondary.ma-bt-lg
+          span= secondaryHeading
+        each p in secondaryDescription
+          p.description__text= p
+        if content.courseContent[i].chapterName.lesson[j].secondaryImage
+          img(src=`${content.courseContent[i].chapterName.lesson[j].secondaryImage}`)
+        if (content.courseContent[i].chapterName.lesson[j].secondaryVideo)
+          iframe(src=`${ontent.courseContent[i].chapterName.lesson[j].secondaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+      
+      if content.courseContent[i].chapterName.lesson[j].tertiaryHeading
+        - const tertiaryHeading = content.courseContent[i].chapterName.lesson[j].tertiaryHeading;
+        - const tertiaryDescription = content.courseContent[i].chapterName.lesson[j].tertiaryDescription.split('\n');
+        h2.heading-secondary.ma-bt-lg
+          span= tertiaryHeading
+        each p in tertiaryDescription
+          p.description__text= p
+        if content.courseContent[i].chapterName.lesson[j].tertiaryImage
+          img(src=`${content.courseContent[i].chapterName.lesson[j].tertiaryImage}`)
+        if (content.courseContent[i].chapterName.lesson[j].tertiaryVideo)
+          iframe(src=`${ontent.courseContent[i].chapterName.lesson[j].tertiaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+      if content.courseContent[i].chapterName.lesson[j].quaternaryHeading 
+        - const quaternaryHeading = content.courseContent[i].chapterName.lesson[j].quaternaryHeading;
+        - const quaternaryDescription = content.courseContent[i].chapterName.lesson[j].quaternaryDescription.split('\n');
+        h2.heading-secondary.ma-bt-lg
+          span= quaternaryHeading
+        each p in quaternaryDescription
+          p.description__text= p
+        if content.courseContent[i].chapterName.lesson[j].quaternaryImage
+          img(src=`${content.courseContent[i].chapterName.lesson[j].quaternaryImage}`)
+        if (content.courseContent[i].chapterName.lesson[j].quaternaryVideo)
+          iframe(src=`${ontent.courseContent[i].chapterName.lesson[j].quaternaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+      a.next-btn.btn.btn--small.btn--green#clickme(href=`/lesson/${content.slug}`) Next
+
+
+    .overview-box
+      div
+        main.sub
+          .overview-box__group
+            h2.heading-secondary.ma-bt-lg Table of Contents
+            each courseContent in content.courseContent
+              +accordion(`0`)
+
+
+

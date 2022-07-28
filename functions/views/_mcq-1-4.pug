@@ -1,0 +1,36 @@
+mixin mcq-1-4()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: The wallet address is generated from the public key.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question0' value='buffer')
+                  span True
+              li.answer-box
+                label
+                  input(type='radio' name='question0' value='function')
+                  span False
+
+
+          li.quiz-box
+            h3 Question2: The private key should never be shared with anyone.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span True
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span False
+
+
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

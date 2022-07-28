@@ -1,0 +1,22 @@
+mixin mcq-7-1()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: Statement: on-chain scaling in the first layer avoids second layer solutions
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span False
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span True
+
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

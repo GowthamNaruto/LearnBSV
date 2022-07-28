@@ -1,0 +1,65 @@
+mixin mcq-4-1()
+  main.sub
+    .containers
+      #Section1.tabcontent
+        ul.quiz
+          li.quiz-box
+            h3 Question1: What follows are a few notable quotes. Which quote is correct? Show the hint for an explanation.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span Indian Prime Minister Narendra Modi described data as the new oil and the new gold
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span The world's most valuable resources is no longer oil, but data. -The Economist
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span Data is the New Oil of the Digital Economy - wired
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span All answers are correct
+
+          li.quiz-box
+            h3 Question2: How much % of the data in the world today has been created in the last two years alone? Show the hint for an explanation.
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='buffer')
+                  span 33%
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='function')
+                  span 50%
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='global')
+                  span 66%
+              li.answer-box
+                label
+                  input(type='radio' name='question1' value='number')
+                  span 90%
+
+ 
+
+          li.quiz-box
+            h3 Question3: Is it possible to scrape large amounts of data and use it effectively for any useful business purpose without any refinement?
+            ul.choices
+              li.answer-box
+                label
+                  input(type='radio' name='question2' value='buffer')
+                  span True
+              li.answer-box
+                label
+                  input(type='radio' name='question2' value='function')
+                  span False
+
+
+
+        .button-box
+          button.view-results#viewResults View Results
+          span#myresults.my-results My results will appear here
+          span#myresultsDescription.my-results-description Description

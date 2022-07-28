@@ -1,0 +1,446 @@
+extends base
+include _indexCard2
+include _mcq-1-2
+include _mcq-1-4
+include _mcq-1-6
+include _mcq-2-2
+include _mcq-2-3
+include _mcq-2-4
+include _mcq-2-5
+include _mcq-3-2
+include _mcq-3-3
+include _mcq-4-1
+include _mcq-4-3
+include _mcq-4-4
+include _mcq-5-1
+include _mcq-5-2
+include _mcq-5-4
+include _mcq-6-2
+include _mcq-6-3
+include _mcq-7-1
+include _mcq-8-1
+include _mcq-8-2
+include _mcq-9-1
+include _mcq-9-2
+//- include _reviewCard
+
+//- block append head
+
+block content
+  main.lesson_sub
+    section.section-description
+      .description-box
+        - const primaryHeading = lesson.lesson[0].primaryHeading
+          h2.heading-secondary.ma-bt-lg
+            span= primaryHeading
+        if lesson.lesson[0].primaryDescription
+          - const primaryDescription = lesson.lesson[0].primaryDescription.split('\n');
+          each p in primaryDescription
+            p.description__text= p
+        if lesson.lesson[0].primaryImage
+            img(src=`${lesson.lesson[0].primaryImage}`)
+        if lesson.lesson[0].primaryImageDescription
+            p.description__text= lesson.lesson[0].primaryImageDescription
+        if lesson.lesson[0].primaryVideoDescription
+            p.description__text= lesson.lesson[0].primaryVideoDescription
+        if (lesson.lesson[0].primaryVideo)
+            iframe(src=`${lesson.lesson[0].primaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].secondaryHeading
+          - const secondaryHeading = lesson.lesson[0].secondaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= secondaryHeading
+        if lesson.lesson[0].secondaryDescription
+          - const secondaryDescription = lesson.lesson[0].secondaryDescription.split('\n');
+          each p in secondaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].secondaryImage)
+            img(src=`${lesson.lesson[0].secondaryImage}`)
+          if lesson.lesson[0].secondaryImageDescription
+            p.description__text= lesson.lesson[0].secondaryImageDescription
+          if lesson.lesson[0].secondaryVideoDescription
+            p.description__text= lesson.lesson[0].secondaryVideoDescription
+          if (lesson.lesson[0].secondaryVideo)
+            iframe(src=`${lesson.lesson[0].secondaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+        
+        if lesson.lesson[0].tertiaryHeading
+          - const tertiaryHeading = lesson.lesson[0].tertiaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= tertiaryHeading
+        if lesson.lesson[0].tertiaryDescription
+          - const tertiaryDescription = lesson.lesson[0].tertiaryDescription.split('\n');
+          each p in tertiaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].tertiaryImage)
+            img(src=`${lesson.lesson[0].tertiaryImage}`)
+          if lesson.lesson[0].tertiaryImageDescription
+            p.description__text= lesson.lesson[0].tertiaryImageDescription
+          if lesson.lesson[0].tertiaryVideoDescription
+            p.description__text= lesson.lesson[0].tertiaryVideoDescription
+          if (lesson.lesson[0].tertiaryVideo)
+            iframe(src=`${lesson.lesson[0].tertiaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].quaternaryHeading 
+          - const quaternaryHeading = lesson.lesson[0].quaternaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= quaternaryHeading
+        if lesson.lesson[0].quaternaryDescription 
+          - const quaternaryDescription = lesson.lesson[0].quaternaryDescription.split('\n');
+          each p in quaternaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].quaternaryImage)
+            img(src=`${lesson.lesson[0].quaternaryImage}`)
+          if lesson.lesson[0].quaternaryImageDescription
+            p.description__text= lesson.lesson[0].quaternaryImageDescription
+          if lesson.lesson[0].quaternaryVideoDescription
+            p.description__text= lesson.lesson[0].quaternaryVideoDescription
+          if (lesson.lesson[0].quaternaryVideo)
+            iframe(src=`${lesson.lesson[0].quaternaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].quinaryHeading
+          - const quinaryHeading = lesson.lesson[0].quinaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= quinaryHeading
+        if lesson.lesson[0].quinaryDescription 
+          - const quinaryDescription = lesson.lesson[0].quinaryDescription.split('\n');
+          each p in quinaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].quinaryImage)
+            img(src=`${lesson.lesson[0].quinaryImage}`)
+          if lesson.lesson[0].quinaryImageDescription
+            p.description__text= lesson.lesson[0].quinaryImageDescription
+          if lesson.lesson[0].quinaryVideoDescription
+            p.description__text= lesson.lesson[0].quinaryVideoDescription
+          if (lesson.lesson[0].quinaryVideo)
+            iframe(src=`${lesson.lesson[0].quinaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].senaryHeading
+          - const senaryHeading = lesson.lesson[0].senaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= senaryHeading
+        if lesson.lesson[0].senaryDescription 
+          - const senaryDescription = lesson.lesson[0].senaryDescription.split('\n');
+          each p in senaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].senaryImage)
+            img(src=`${lesson.lesson[0].senaryImage}`)
+          if lesson.lesson[0].senaryImageDescription
+            p.description__text= lesson.lesson[0].senaryImageDescription
+          if lesson.lesson[0].senaryVideoDescription
+            p.description__text= lesson.lesson[0].senaryVideoDescription
+          if (lesson.lesson[0].senaryVideo)
+            iframe(src=`${lesson.lesson[0].senaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].septanaryHeading
+          - const septanaryHeading = lesson.lesson[0].septanaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= septanaryHeading
+        if lesson.lesson[0].septanaryDescription 
+          - const septanaryDescription = lesson.lesson[0].septanaryDescription.split('\n');
+          each p in septanaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].septanaryImage)
+            img(src=`${lesson.lesson[0].septanaryImage}`)
+          if lesson.lesson[0].septanaryImageDescription
+            p.description__text= lesson.lesson[0].septanaryImageDescription
+          if lesson.lesson[0].septanaryVideoDescription
+            p.description__text= lesson.lesson[0].septanaryVideoDescription
+          if (lesson.lesson[0].septanaryVideo)
+            iframe(src=`${lesson.lesson[0].septanaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lessonName === '1.2 Peer-to-peer network'
+          +mcq-1-2()
+        if lesson.lessonName === '1.4 Anonymity or pseudonymity'
+          +mcq-1-4()
+        if lesson.lessonName === '1.6 Proof-of-Work'
+          +mcq-1-6()
+        if lesson.lessonName === '2.2 An Electronic Cash System'
+          +mcq-2-2()
+        if lesson.lessonName === "2.3 Bitcoin's Monetary Policy"
+          +mcq-2-3()
+        if lesson.lessonName === '2.4 Transparency'
+          +mcq-2-4()
+        if lesson.lessonName === '2.5 wider access to low cost financial services'
+          +mcq-2-5()
+        if lesson.lessonName === '3.2 What is the Web?'
+          +mcq-3-2()
+        if lesson.lessonName === "3.3 How Bitcoin's Metanet helps to solve Web 2.0 issues"
+          +mcq-3-3()
+        if lesson.lessonName === "4.1 Data is the new Oil"
+          +mcq-4-1()
+        if lesson.lessonName === "4.3 Commercializing Data"
+          +mcq-4-3()
+        if lesson.lessonName === "4.4 Bit + Coin"
+          +mcq-4-4()
+        if lesson.lessonName === "5.1 Key Differences Between Public and Private Blockchain"
+          +mcq-5-1()
+        if lesson.lessonName === "5.2 Governance"
+          +mcq-5-2()
+        if lesson.lessonName === "5.4 Transaction Costs"
+          +mcq-5-4()
+        if lesson.lessonName === "6.2 Proof of stake (POS)"
+          +mcq-6-2()
+        if lesson.lessonName === "6.3 Differences between POW and POS"
+          +mcq-6-3()
+        if lesson.lessonName === "7.1 Predictable fees"
+          +mcq-7-1()
+        if lesson.lessonName === "8.1 Forking"
+          +mcq-8-1()
+        if lesson.lessonName === "8.2 Bitcoin Protocol Rules"
+          +mcq-8-2()
+        if lesson.lessonName === "9.1 Compliance"
+          +mcq-9-1()
+        if lesson.lessonName === "9.2 Enforcement"
+          +mcq-9-2()
+        
+
+        -let userId= user.id
+        //- -let number = lesson.courserNumber
+        //- -let progress= 'progress'+`${number}`
+        //- h2= lesson.courseNumber
+
+        //- -let progress= user.progress1+1
+        //- h2= progress
+        
+        //- -let pro= 'progress' + `${lesson.courseNumber}`
+        //- h2= pro
+        //-    -let userId= user.id
+        //- //- h2= i
+        //- if (lesson.courseNumber === 1)
+        //- -let progress= 'progress2'
+        //- h2= progress
+        
+
+        if lesson.lessonName === lesson.nextLessonName
+          a.btn.btn--green(href=`/assessment/${lesson.slug}`) Final Assessment
+        //- else if (user.name === 'jiraya')
+        //-   a.next-btn.btn.btn--small.btn--green#clickme(href=`/lesson/${lesson.nextLessonName}`) Go to Next
+        else if lesson.courseNumber === 1
+          if user.progress1 === 0  && lesson.lesson[0].primaryHeading ==='0.1 Course Information'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 1  && lesson.lessonName ==='0.2 Course plan'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 2  && lesson.lessonName ==='0.3 Course completion'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 3  && lesson.lessonName ==='1.1 Announcing Bitcoin'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 4  && lesson.lessonName ==='1.2 Peer-to-peer network'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 5  && lesson.lessonName ==='1.3 Ledger'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 6  && lesson.lessonName ==='1.4 Anonymity or pseudonymity'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 7  && lesson.lessonName ==='1.5 Double-spending'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 8  && lesson.lessonName ==='1.6 Proof-of-Work'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 9  && lesson.lessonName ==='1.7 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 10  && lesson.lessonName ==='2.1 Speaking of Bitcoin'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 11  && lesson.lessonName ==='2.2 An Electronic Cash System'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 12  && lesson.lessonName ==="2.3 Bitcoin's Monetary Policy"
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 13  && lesson.lessonName ==='2.4 Transparency'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 14  && lesson.lessonName ==='2.5 wider access to low cost financial services'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 15  && lesson.lessonName ==='2.6 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 16  && lesson.lessonName ==='3.1 What is the internet?'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 17  && lesson.lessonName ==='3.2 What is the Web?'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 18  && lesson.lessonName ==="3.3 How Bitcoin's Metanet helps to solve Web 2.0 issues"
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 19  && lesson.lessonName ==='3.4 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 20  && lesson.lessonName ==='4.1 Data is the new Oil'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 21  && lesson.lessonName ==='4.2 Data and Information'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 22  && lesson.lessonName ==='4.3 Commercializing Data'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 23  && lesson.lessonName ==='4.4 Bit + Coin'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 24  && lesson.lessonName ==='4.5 Real World Applications'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 25  && lesson.lessonName ==='4.6 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 26  && lesson.lessonName ==='5.1 Key Differences Between Public and Private Blockchain'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 27  && lesson.lessonName ==='5.2 Governance'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 28  && lesson.lessonName ==='5.3 Access to Data'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 29  && lesson.lessonName ==='5.4 Transaction Costs'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 30  && lesson.lessonName ==='5.5 Interoperability'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 31  && lesson.lessonName ==='5.6 The Global Public Blockchain'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 32  && lesson.lessonName ==='5.7 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 33  && lesson.lessonName ==='6.1 Proof of work (POW)'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 34  && lesson.lessonName ==='6.2 Proof of stake (POS)'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 35  && lesson.lessonName ==='6.3 Differences between POW and POS'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 36  && lesson.lessonName ==='6.4 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 37  && lesson.lessonName ==='7.1 Predictable fees'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 38  && lesson.lessonName ==='7.2 Reduce risk on compliance during the retention period'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 39  && lesson.lessonName ==='7.3 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 40  && lesson.lessonName ==='8.1 Forking'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 41  && lesson.lessonName ==='8.2 Bitcoin Protocol Rules'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 42  && lesson.lessonName ==='8.3 Summary'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 43  && lesson.lessonName ==='9.1 Compliance'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else if user.progress1 === 44  && lesson.lessonName ==='9.2 Enforcement'
+            -let pro = user.progress1+1
+            button#progress1.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+          else 
+            a.btn.btn--green.span-all-rows(href=`/lesson/${lesson.nextLessonName}`) NEXT LESSON
+
+        if lesson.courseNumber === 2
+          -let pro = user.progress2+1
+          //- h2=pro
+          button#progress2.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 3
+        //-   -let pro = user.progress3+1
+        //-   //- h2=pro
+        //-   button#progress3.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 4
+        //-   -let pro = user.progress4+1
+        //-   //- h2=pro
+        //-   button#progress4.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 5
+        //-   -let pro = user.progress5+1
+        //-   //- h2=pro
+        //-   button#progress5.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 6
+        //-   -let pro = user.progress6+1
+        //-   //- h2=pro
+        //-   button#progress6.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 7
+        //-   -let pro = user.progress7+1
+        //-   //- h2=pro
+        //-   button#progress7.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 8
+        //-   -let pro = user.progress8+1
+        //-   //- h2=pro
+        //-   button#progress8.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 9
+        //-   -let pro = user.progress9+1
+        //-   //- h2=pro
+        //-   button#progress9.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 10
+        //-   -let pro = user.progress10+1
+        //-   //- h2=pro
+        //-   button#progress10.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 11
+        //-   -let pro = user.progress11+1
+        //-   //- h2=pro
+        //-   button#progress11.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 12
+        //-   -let pro = user.progress12+1
+        //-   //- h2=pro
+        //-   button#progress12.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 13
+        //-   -let pro = user.progress13+1
+        //-   //- h2=pro
+        //-   button#progress13.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 14
+        //-   -let pro = user.progress14+1
+        //-   //- h2=pro
+        //-   button#progress14.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 15
+        //-   -let pro = user.progress15+1
+        //-   //- h2=pro
+        //-   button#progress15.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 16
+        //-   -let pro = user.progress16+1
+        //-   //- h2=pro
+        //-   button#progress16.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 17
+        //-   -let pro = user.progress17+1
+        //-   //- h2=pro
+        //-   button#progress17.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 18
+        //-   -let pro = user.progress18+1
+        //-   //- h2=pro
+        //-   button#progress18.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 19
+        //-   -let pro = user.progress19+1
+        //-   //- h2=pro
+        //-   button#progress19.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON    
+        //- else if lesson.courseNumber === 20
+        //-   -let pro = user.progress20+1
+        //-   //- h2=pro
+        //-   button#progress20.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON 20  
+        //- else if lesson.courseNumber === 21
+        //-   -let pro = user.progress21+1
+        //-   //- h2=pro
+        //-   button#progress.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+        //- else  
+        //-   button#progress.btn.btn--green.span-all-rows(data-user-id=`${user.id},${pro},${lesson.nextLessonName} `) NEXT LESSSON
+
+    
+
+
+      .overview-box
+        +indexCard()
+
+

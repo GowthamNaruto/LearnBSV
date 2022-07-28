@@ -1,0 +1,42 @@
+mixin mcq-1-2()
+  main.sub
+    .containers
+      ul.quiz
+        li.quiz-box
+          h3 Question1: If you would like to take down a client-server network, what would your point of attack be?
+          ul.choices
+            li.answer-box
+              label
+                input(type='radio' name='question0' value='buffer')
+                span The Client
+            li.answer-box
+              label
+                input(type='radio' name='question0' value='function')
+                span The Server
+
+
+        li.quiz-box
+          h3 Question2: Tick the aspect that is part of a peer-to-peer network.
+          ul.choices
+            li.answer-box
+              label
+                input(type='radio' name='question1' value='buffer')
+                span Single point of failure
+            li.answer-box
+              label
+                input(type='radio' name='question1' value='function')
+                span Trusted third party
+            li.answer-box
+              label
+                input(type='radio' name='question1' value='global')
+                span CRUD
+            li.answer-box
+              label
+                input(type='radio' name='question1' value='number')
+                span Peer-2-peer
+
+
+      .button-box
+        button.view-results#viewResults View Results
+        span#myresults.my-results My results will appear here
+        span#myresultsDescription.my-results-description Description

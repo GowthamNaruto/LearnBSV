@@ -1,0 +1,125 @@
+mixin lessonCard()
+
+      .description-box
+        - const primaryHeading = lesson.lesson[0].primaryHeading
+          h2.heading-secondary.ma-bt-lg
+            span= primaryHeading
+        if lesson.lesson[0].primaryDescription
+          - const primaryDescription = lesson.lesson[0].primaryDescription.split('\n');
+          each p in primaryDescription
+            p.description__text= p
+        if lesson.lesson[0].primaryImage
+            img(src=`${lesson.lesson[0].primaryImage}`)
+        if lesson.lesson[0].primaryImageDescription
+            p.description__text= lesson.lesson[0].primaryImageDescription
+        if lesson.lesson[0].primaryVideoDescription
+            p.description__text= lesson.lesson[0].primaryVideoDescription
+        if (lesson.lesson[0].primaryVideo)
+            iframe(src=`${lesson.lesson[0].primaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].secondaryHeading
+          - const secondaryHeading = lesson.lesson[0].secondaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= secondaryHeading
+        if lesson.lesson[0].secondaryDescription
+          - const secondaryDescription = lesson.lesson[0].secondaryDescription.split('\n');
+          each p in secondaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].secondaryImage)
+            img(src=`${lesson.lesson[0].secondaryImage}`)
+          if lesson.lesson[0].secondaryImageDescription
+            p.description__text= lesson.lesson[0].secondaryImageDescription
+          if lesson.lesson[0].secondaryVideoDescription
+            p.description__text= lesson.lesson[0].secondaryVideoDescription
+          if (lesson.lesson[0].secondaryVideo)
+            iframe(src=`${lesson.lesson[0].secondaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+        
+        if lesson.lesson[0].tertiaryHeading
+          - const tertiaryHeading = lesson.lesson[0].tertiaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= tertiaryHeading
+        if lesson.lesson[0].tertiaryDescription
+          - const tertiaryDescription = lesson.lesson[0].tertiaryDescription.split('\n');
+          each p in tertiaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].tertiaryImage)
+            img(src=`${lesson.lesson[0].tertiaryImage}`)
+          if lesson.lesson[0].tertiaryImageDescription
+            p.description__text= lesson.lesson[0].tertiaryImageDescription
+          if lesson.lesson[0].tertiaryVideoDescription
+            p.description__text= lesson.lesson[0].tertiaryVideoDescription
+          if (lesson.lesson[0].tertiaryVideo)
+            iframe(src=`${lesson.lesson[0].tertiaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].quaternaryHeading 
+          - const quaternaryHeading = lesson.lesson[0].quaternaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= quaternaryHeading
+        if lesson.lesson[0].quaternaryDescription 
+          - const quaternaryDescription = lesson.lesson[0].quaternaryDescription.split('\n');
+          each p in quaternaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].quaternaryImage)
+            img(src=`${lesson.lesson[0].quaternaryImage}`)
+          if lesson.lesson[0].quaternaryImageDescription
+            p.description__text= lesson.lesson[0].quaternaryImageDescription
+          if lesson.lesson[0].quaternaryVideoDescription
+            p.description__text= lesson.lesson[0].quaternaryVideoDescription
+          if (lesson.lesson[0].quaternaryVideo)
+            iframe(src=`${lesson.lesson[0].quaternaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].quinaryHeading
+          - const quinaryHeading = lesson.lesson[0].quinaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= quinaryHeading
+        if lesson.lesson[0].quinaryDescription 
+          - const quinaryDescription = lesson.lesson[0].quinaryDescription.split('\n');
+          each p in quinaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].quinaryImage)
+            img(src=`${lesson.lesson[0].quinaryImage}`)
+          if lesson.lesson[0].quinaryImageDescription
+            p.description__text= lesson.lesson[0].quinaryImageDescription
+          if lesson.lesson[0].quinaryVideoDescription
+            p.description__text= lesson.lesson[0].quinaryVideoDescription
+          if (lesson.lesson[0].quinaryVideo)
+            iframe(src=`${lesson.lesson[0].quinaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].senaryHeading
+          - const senaryHeading = lesson.lesson[0].senaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= senaryHeading
+        if lesson.lesson[0].senaryDescription 
+          - const senaryDescription = lesson.lesson[0].senaryDescription.split('\n');
+          each p in senaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].senaryImage)
+            img(src=`${lesson.lesson[0].senaryImage}`)
+          if lesson.lesson[0].senaryImageDescription
+            p.description__text= lesson.lesson[0].senaryImageDescription
+          if lesson.lesson[0].senaryVideoDescription
+            p.description__text= lesson.lesson[0].senaryVideoDescription
+          if (lesson.lesson[0].senaryVideo)
+            iframe(src=`${lesson.lesson[0].senaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lesson[0].septanaryHeading
+          - const septanaryHeading = lesson.lesson[0].septanaryHeading;
+          h2.heading-secondary.ma-bt-lg
+            span= septanaryHeading
+        if lesson.lesson[0].septanaryDescription 
+          - const septanaryDescription = lesson.lesson[0].septanaryDescription.split('\n');
+          each p in septanaryDescription
+            p.description__text= p
+          if (lesson.lesson[0].septanaryImage)
+            img(src=`${lesson.lesson[0].septanaryImage}`)
+          if lesson.lesson[0].septanaryImageDescription
+            p.description__text= lesson.lesson[0].septanaryImageDescription
+          if lesson.lesson[0].septanaryVideoDescription
+            p.description__text= lesson.lesson[0].septanaryVideoDescription
+          if (lesson.lesson[0].septanaryVideo)
+            iframe(src=`${lesson.lesson[0].septanaryVideo}` title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+        if lesson.lessonName === lesson.nextLessonName
+          a.btn.btn--green(href=`/assessment/${lesson.slug}`) Final Assessment
+        else 
+          a.next-btn.btn.btn--small.btn--green#clickme(href=`/lesson/${lesson.nextLessonName}`) Next

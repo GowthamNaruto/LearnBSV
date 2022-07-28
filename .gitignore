@@ -1,0 +1,4 @@
+node_modules/
+# All the .env files
+*.env
+.parcel-cache/
